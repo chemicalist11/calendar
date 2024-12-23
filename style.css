@@ -1,0 +1,117 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-weight: 600;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+h2 {
+  font-weight: 600;
+}
+
+.calendar {
+  margin: 0 auto;
+  width: 400px;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 5px black;
+}
+
+.calendar header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.calendar ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.calendar ul li {
+  width: calc(100% / 7);
+  position: relative;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+
+#prev,
+#next {
+  font-size: 1.5rem;
+  font-weight: 600;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+#prev:hover,
+#next:hover {
+  background: #000;
+  color: #fff;
+}
+
+.days {
+  font-weight: 600;
+}
+
+.dates li.today {
+  color: #fff;
+}
+
+.dates li.today::before {
+  content: "";
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #000;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.dates li.gray {
+  color: #ccc;
+}
+
+.dates li.selected {
+  color: #fff;
+  background: green;
+  border-radius: 50%;
+}
+
+.dates li.in-range {
+  background: #E8F5E9;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  margin-top: 1rem;
+  min-height: 1.5em;
+}
+
+.message {
+  text-align: center;
+  margin-top: 1rem;
+  min-height: 1.5em;
+}

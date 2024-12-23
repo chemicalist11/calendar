@@ -1,0 +1,54 @@
+<!-- 
+  ・選択した追加機能
+    １．宿泊日数の計算: チェックイン日とチェックアウト日から宿泊日数を自動計算して表示する。
+  ・プログラム全体の設計意図
+    必要最低限の主要ファイルのみで実装しました。（コード規模から、修正時の見通しが良いと判断）
+    script.jsは、上記による可読性低下に配慮し、コメント・関数化などを行いました。
+  ・特に工夫した部分
+    ユーザー体験向上のため、現在の月間カレンダーの日付表示の先頭・終端に前後月の日付も表示しました。
+  ・改善余地
+    年月日と日と曜日の変数名は区別がつきにくいものになっている点です。現状、年月日→date、日→date、曜日→dayのようになっており、より明確に理解できる変数名を考えたいです。
+    一般的にdateとdayを直感的に判断するのは難しいと思っています。また、年月日と日を判別できる簡潔な英訳が思いつきませんでした。
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>宿泊日選択カレンダー</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <h1>宿泊日選択カレンダー</h1>
+    <div class="calendar">
+      <header>
+        <!-- 前月ボタン -->
+        <button id="prev"><</button>
+        <h2></h2>
+        <!-- 次月ボタン -->
+        <button id="next">></button>
+      </header>
+
+      <section>
+        <ul class="days">
+          <li>日</li>
+          <li>月</li>
+          <li>火</li>
+          <li>水</li>
+          <li>木</li>
+          <li>金</li>
+          <li>土</li>
+        </ul>
+        <ul class="dates"></ul>
+      </section>
+    </div>
+
+    <p id="message" class="message"></p>
+    <p id="error-message" class="error-message"></p>
+  </body>
+</html>
+
+
